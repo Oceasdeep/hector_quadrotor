@@ -3,7 +3,9 @@
 <launch>
    
   <!-- Start Gazebo with wg world running in (max) realtime -->
-  <include file="$(find hector_gazebo_worlds)/launch/willow_garage.launch"/>
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/willow_garage.launch"/> -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/sick_robot_day_2014.launch"/> -->
+  <include file="$(find hector_gazebo_worlds)/launch/small_indoor_scenario.launch"/>
    
   <!-- Spawn simulated quadrotor uav -->
   <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch" >

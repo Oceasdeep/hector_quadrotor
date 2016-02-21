@@ -49,6 +49,20 @@ target_link_libraries(quadrotor_teleop ${catkin_LIBRARIES})
 ## as an example, message headers may need to be generated before nodes
 add_dependencies(quadrotor_teleop ${catkin_EXPORTED_TARGETS})
 
+add_executable(quadrotor_teleop_random src/quadrotor_teleop_random.cpp)
+target_link_libraries(quadrotor_teleop_random ${catkin_LIBRARIES})
+
+## Add cmake target dependencies of the executable/library
+## as an example, message headers may need to be generated before nodes
+add_dependencies(quadrotor_teleop_random ${catkin_EXPORTED_TARGETS})
+
+add_executable(quadrotor_obstacle_avoidance src/quadrotor_obstacle_avoidance.cpp)
+target_link_libraries(quadrotor_obstacle_avoidance ${catkin_LIBRARIES})
+
+## Add cmake target dependencies of the executable/library
+## as an example, message headers may need to be generated before nodes
+add_dependencies(quadrotor_teleop_random ${catkin_EXPORTED_TARGETS})
+
 #############
 ## Install ##
 #############
