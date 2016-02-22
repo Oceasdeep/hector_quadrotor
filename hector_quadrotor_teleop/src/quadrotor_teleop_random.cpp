@@ -22,9 +22,9 @@ void toogleState()
   if(g_state == TAKEOFF)
   {
     g_state = FORWARD;
-    linear_x = rand()%100/100.0;
-    linear_y = rand()%100/100.0;
-    linear_z = (rand()%100 - 50)/1000.0;
+    linear_x = (rand()%100 - 50)/100.0;
+    linear_y = 0;//rand()%100/100.0;
+    linear_z = 0;//(rand()%100 - 50)/1000.0;
 
   }else if(g_state == FORWARD)
   {
@@ -63,7 +63,6 @@ void timerCallback(const ros::TimerEvent&, ros::Publisher twist_pub)
       if(count % 100 == 0)
       {
         toogleState();
-        // linear_z = rand()%100/100.0;
         return;
       }
 
@@ -73,13 +72,12 @@ void timerCallback(const ros::TimerEvent&, ros::Publisher twist_pub)
     twist.linear.x = linear_x;
     twist.linear.y = linear_y;
     twist.linear.z = linear_z;
-    //twist.angular.z = angular_z;
     twist_pub.publish(twist);
 
-    if(count % 100 == 0)
+    if(count % 200 == 0)
     {
       toogleState();
-      // angular_z = rand()%100/100.0;
+      
       return;
     }
   }else if(g_state == TURN)
@@ -88,14 +86,13 @@ void timerCallback(const ros::TimerEvent&, ros::Publisher twist_pub)
     twist.angular.z  = angular_z;
 
     twist_pub.publish(twist);
-    if(count % 100 == 0)
+    if(count % 200 == 0)
     {
       toogleState();
-      // linear_x = rand()%100/100.0;
+      
       return;
     }
   }
-
 }
 
 int main(int argc, char** argv)
