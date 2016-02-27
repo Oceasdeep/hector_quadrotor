@@ -18,8 +18,7 @@
 
   <!-- Spawn simulated quadrotor uav(downward camera) -->
 <!--   <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor_with_downward_cam.launch" >   -->  
-  <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor_with_downward_cam_sonar.launch" >  
-      <!-- <arg name="use_ground_truth_for_control" value="false" /> -->
+  <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor_with_downward_cam_laser.launch" >  
   </include>
 
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/outdoor_flight_down_cam_sonar.rviz"/>
