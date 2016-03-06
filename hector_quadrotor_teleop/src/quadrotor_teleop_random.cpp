@@ -29,12 +29,12 @@ void toogleState()
   }else if(g_state == FORWARD)
   {
     g_state = TURN;
-    angular_z = rand()%100/100.0;
+    angular_z = rand()%100/50.0;
 
   }else if(g_state == TURN)
   {
     g_state = FORWARD;
-    linear_x = rand()%100/100.0;
+    linear_x = rand()%100/50.0;
   }
 }
 

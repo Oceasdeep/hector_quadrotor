@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- todo, publish the tf state and how to change the state -->
+<launch>
+  <arg name="name" default="irobot"/>
+  <arg name="model" default="/home/libing/.gazebo/models/iRobotCreat/model-1_4.sdf"/>
+  
+  <arg name="x" default="0.0"/>
+  <arg name="y" default="0.0"/>
+  <arg name="z" default="0.3"/>
+
+<!--   <arg name="commandTopic" default="cmd_vel2"/>
+  <arg name="odometryTopic" default="odom" />
+  <arg name="odometryFrame" default="odom" /> -->
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="spawn_irobot" pkg="gazebo_ros" type="spawn_model"
+        args="-file $(arg model) -sdf
+           -model $(arg name)
+           -x $(arg x)
+           -y $(arg y)
+           -z $(arg z)"
+        respawn="false" output="screen"/>
+
+</launch>

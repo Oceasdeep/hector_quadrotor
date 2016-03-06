@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<launch>
+   <!-- <arg name="model" default="" /> -->
+   <group ns="irobot1">
+     <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
+       <arg name="name" value="irobot1" />
+       <arg name="x" value="0" />
+       <arg name="y" value="0" />
+       <arg name="z" value="0" />
+     </include>
+  </group>
+
+
+   <group ns="irobot2">
+     <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
+       <arg name="name" value="irobot2" />
+       <arg name="x" value="0" />
+       <arg name="y" value="1" />
+       <arg name="z" value="0" />
+     </include>
+   </group>
+
+</launch>
