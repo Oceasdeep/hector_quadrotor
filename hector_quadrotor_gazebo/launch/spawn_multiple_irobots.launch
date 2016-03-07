@@ -1,12 +1,21 @@
 <?xml version="1.0"?>
 
 <launch>
-   <!-- <arg name="model" default="" /> -->
-   <group ns="irobot1">
+  <group ns="irobot0">
+     <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
+       <arg name="name" value="irobot0" />
+       <arg name="x" value="0" />
+       <arg name="y" value="0" />
+       <arg name="z" value="0" />
+     </include>
+  </group>
+
+
+  <group ns="irobot1">
      <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
        <arg name="name" value="irobot1" />
        <arg name="x" value="0" />
-       <arg name="y" value="0" />
+       <arg name="y" value="1" />
        <arg name="z" value="0" />
      </include>
   </group>
@@ -16,9 +25,73 @@
      <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
        <arg name="name" value="irobot2" />
        <arg name="x" value="0" />
-       <arg name="y" value="1" />
+       <arg name="y" value="2" />
        <arg name="z" value="0" />
      </include>
    </group>
+
+  <group ns="irobot3">
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
+      <arg name="name" value="irobot3" />
+      <arg name="x" value="0" />
+      <arg name="y" value="3" />
+      <arg name="z" value="0" />
+    </include>
+  </group>
+
+  <group ns="irobot4">
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
+      <arg name="name" value="irobot4" />
+      <arg name="x" value="0" />
+      <arg name="y" value="4" />
+      <arg name="z" value="0" />
+    </include>
+  </group>
+
+  <group ns="irobot5">
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
+      <arg name="name" value="irobot5" />
+      <arg name="x" value="0" />
+      <arg name="y" value="5" />
+      <arg name="z" value="0" />
+    </include>
+  </group>
+
+
+  <group ns="irobot6">
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
+      <arg name="name" value="irobot6" />
+      <arg name="x" value="0" />
+      <arg name="y" value="6" />
+      <arg name="z" value="0" />
+    </include>
+  </group>
+
+  <group ns="irobot7">
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
+      <arg name="name" value="irobot7" />
+      <arg name="x" value="0" />
+      <arg name="y" value="7" />
+      <arg name="z" value="0" />
+    </include>
+  </group>
+
+  <group ns="irobot8">
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
+      <arg name="name" value="irobot8" />
+      <arg name="x" value="0" />
+      <arg name="y" value="8" />
+      <arg name="z" value="0" />
+    </include>
+  </group>
+
+  <group ns="irobot9">
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_irobot.launch">
+      <arg name="name" value="irobot9" />
+      <arg name="x" value="0" />
+      <arg name="y" value="9" />
+      <arg name="z" value="0" />
+    </include>
+  </group>
 
 </launch>

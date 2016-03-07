@@ -5,7 +5,8 @@
   <!-- <xacro:include filename="$(find hector_sensors_description)/urdf/sonar_sensor.urdf.xacro" /> -->
   <xacro:property name="pi" value="3.1415926535897931" />
 
-  <xacro:macro name="irobot_base_macro" params="name update_rate commandTopic odometryFrame robotBaseFrame">
+  <!-- <xacro:macro name="irobot_base_macro" params="name update_rate commandTopic odometryFrame robotBaseFrame"> -->
+  <xacro:macro name="irobot_base_macro" params="name">
 
     <link name="base">
       <inertial>
@@ -33,9 +34,7 @@
       <visual name="base_visual">
         <pose>0 0 0.047800 0 0 0</pose>
         <geometry>
-          <mesh>
-            <uri>model://create/meshes/create_body.dae</uri>
-          </mesh>
+            <mesh filename="package://hector_quadrotor_description/meshes/irobot/create_body.dae.dae"/>
         </geometry>
       </visual>
 
@@ -298,7 +297,8 @@
     </joint>
   <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
     <alwaysOn>true</alwaysOn>
-    <updateRate>${update_rate}</updateRate>
+    <!-- <updateRate>${update_rate}</updateRate> -->
+    <updateRate>20</updateRate>
     <leftJoint>right_wheel</leftJoint>
     <rightJoint>left_wheel</rightJoint>
     <wheelSeparation>0.5380</wheelSeparation>
@@ -309,6 +309,6 @@
     <odometryFrame>odom</odometryFrame>
     <robotBaseFrame>base_footprint</robotBaseFrame>
   </plugin>
-  
+
   </xacro:macro>
 </robot>

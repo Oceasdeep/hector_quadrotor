@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+   
+  <!-- Start Gazebo with wg world running in (max) realtime -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/rolling_landscape_120m.launch"/> -->
+  <include file="$(find hector_gazebo_worlds)/launch/plane.launch"/>
+
+
+  <!-- Spawn simulated quadrotor uav(downward camera) -->
+<!--   <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor_with_downward_cam.launch" >   -->  
+  <include file="$(find hector_quadrotor_gazebo)/launch/spawn_multiple_irobots.launch" >  
+  </include>
+
+	<!-- irboto random walk -->
+  <node pkg="irobot_teleop" type="irobot_random_walk" name="irobot_random_walk" />
+<!--   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/rss_localization.rviz"/> -->
+  
+</launch>
