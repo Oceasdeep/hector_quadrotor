@@ -21,11 +21,9 @@
   <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor_with_wireless_receiver.launch" >  
   </include>
 
+  <!-- <include file="$(find wifi_estimator_nonlinear)/launch/wifi_estimator_nonlinear12.launch" /> -->
 
-  <include file="$(find AoA_localization)/launch/AoA_localization.launch" >  
-  </include>
-
-  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/wireless_receiver.rviz"/>
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/wifi_estimator.rviz"/>
 
   
 
