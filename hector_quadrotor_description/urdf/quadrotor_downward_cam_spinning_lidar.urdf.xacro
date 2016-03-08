@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<robot
+  name="quadrotor"
+  xmlns:xacro="http://ros.org/wiki/xacro"
+>
+   
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+    
+    <!-- Included URDF Files -->
+    <xacro:include filename="$(find hector_quadrotor_description)/urdf/quadrotor_base.urdf.xacro" />
+    
+    <!-- Instantiate quadrotor_base_macro once (has no parameters atm) -->
+    <xacro:quadrotor_base_macro />
+    
+    <xacro:include filename="$(find hector_components_description)/urdf/spinning_hokuyo_utm30lx.urdf.xacro" />
+<!--     <xacro:spinning_hokuyo_utm30lx_macro name="spinning_hokuyo" parent="base_link" angle_deg="30" >
+      <origin xyz="0.0 0.0 -0.097" rpy="${M_PI} 0 0"/>
+    </xacro:spinning_hokuyo_utm30lx_macro> -->
+
+    <xacro:spinning_hokuyo_utm30lx_lidar_mount_offset_macro name="spinning_hokuyo_mount" parent="base_link" scan_topic_in_namespace="scan" angle_deg="45" >
+      <origin xyz="0.0 0.0 -0.097" rpy="${M_PI} 0 0"/>
+    </xacro:spinning_hokuyo_utm30lx_lidar_mount_offset_macro>
+
+
+    
+    <!-- Downward facing camera -->
+    <xacro:include filename="$(find hector_sensors_description)/urdf/generic_camera.urdf.xacro" />
+    <xacro:generic_camera name="downward_cam" parent="base_link" ros_topic="camera/image" cam_info_topic="camera/camera_info" update_rate="20" res_x="640" res_y="480" image_format="L8" hfov="100">
+      <origin xyz="0.4 0.0 -0.0" rpy="0 ${M_PI/2} 0"/>
+    </xacro:generic_camera>
+    
+</robot>
+  
