@@ -3,8 +3,8 @@
 <launch>
    
   <!-- Start Gazebo with wg world running in (max) realtime -->
-  <include file="$(find hector_gazebo_worlds)/launch/rolling_landscape_120m.launch"/>
-  <!-- <include file="$(find hector_gazebo_worlds)/launch/plane.launch"/> -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/rolling_landscape_120m.launch"/> -->
+  <include file="$(find hector_gazebo_worlds)/launch/plane.launch"/>
 
 
   <!-- Spawn simulated quadrotor uav with kinect and laser -->

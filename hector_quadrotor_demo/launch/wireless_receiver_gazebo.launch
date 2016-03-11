@@ -4,6 +4,7 @@
    
   <!-- Start Gazebo with wg world running in (max) realtime -->
   <!-- <include file="$(find hector_gazebo_worlds)/launch/rolling_landscape_120m.launch"/> -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/wireless_router.launch"/> -->
   <include file="$(find hector_gazebo_worlds)/launch/wireless_router.launch"/>
 
   <!-- <include file="$(find hector_gazebo_worlds)/launch/willow_garage.launch"/> -->
@@ -22,8 +23,8 @@
   </include>
 
 
-  <include file="$(find AoA_localization)/launch/AoA_localization.launch" >  
-  </include>
+  <!-- <include file="$(find AoA_localization)/launch/AoA_localization.launch" />   -->
+
 
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/wireless_receiver.rviz"/>
 

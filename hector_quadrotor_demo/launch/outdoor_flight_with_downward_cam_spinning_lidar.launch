@@ -10,8 +10,8 @@
   <!-- Spawn simulated quadrotor uav with kinect and laser -->
   <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor_with_downward_cam_spinning_lidar.launch" />  
 
-
-  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/outdoor_flight_with_kinect_laser.rviz"/>
+  <node pkg="hector_quadrotor_teleop" type="spinning_lidar_control" name="spinning_lidar_control" />
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/spinning_lidar_cam.rviz"/>
 
 
 </launch>

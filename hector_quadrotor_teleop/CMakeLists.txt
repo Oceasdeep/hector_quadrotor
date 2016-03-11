@@ -4,8 +4,24 @@ project(hector_quadrotor_teleop)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS roscpp sensor_msgs geometry_msgs hector_uav_msgs)
-include_directories(include ${catkin_INCLUDE_DIRS})
+find_package(catkin REQUIRED COMPONENTS
+  geometry_msgs
+  nav_msgs
+  sensor_msgs
+  roscpp
+  rospy
+  std_msgs
+  message_generation
+  cv_bridge
+  image_transport
+  tf
+)
+
+include_directories(  
+${catkin_INCLUDE_DIRS}
+${EIGEN3_INCLUDE_DIR})
+
+find_package(Eigen3 REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -62,6 +78,22 @@ target_link_libraries(quadrotor_obstacle_avoidance ${catkin_LIBRARIES})
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 add_dependencies(quadrotor_teleop_random ${catkin_EXPORTED_TARGETS})
+
+
+add_executable(quadrotor_draw_circle src/draw_circle.cpp)
+target_link_libraries(quadrotor_draw_circle ${catkin_LIBRARIES})
+
+## Add cmake target dependencies of the executable/library
+## as an example, message headers may need to be generated before nodes
+add_dependencies(quadrotor_draw_circle ${catkin_EXPORTED_TARGETS})
+
+add_executable(spinning_lidar_control src/spinning_lidar_control.cpp)
+target_link_libraries(spinning_lidar_control ${catkin_LIBRARIES})
+
+## Add cmake target dependencies of the executable/library
+## as an example, message headers may need to be generated before nodes
+add_dependencies(spinning_lidar_control ${catkin_EXPORTED_TARGETS})
+
 
 #############
 ## Install ##
