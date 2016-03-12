@@ -14,6 +14,7 @@ enum State{
 };
  
 State g_state = TAKEOFF; 
+bool clockwise = true;
 
 //find the farrest direction
 void laserScanCallback(const sensor_msgs::LaserScan::ConstPtr& msg)
@@ -122,9 +123,26 @@ void timerCallback(const ros::TimerEvent&, ros::Publisher twist_pub)
     }
   }else if(g_state == FORWARD)
   {
-    commandTurtle(twist_pub, linear_x, angular_z);
+    if(clockwise)
+    {
+      commandTurtle(twist_pub, linear_x, -angular_z);
+    }else 
+    {
+      commandTurtle(twist_pub, linear_x, angular_z);
+    }
+    
   }
   count++;
+  if(count % 1000 == 0)
+  {
+    if(rand() % 2 == 0)
+    {
+      clockwise = true;
+    }else 
+    {
+      clockwise = false;
+    }
+  }
 }
 
 int main(int argc, char** argv)
