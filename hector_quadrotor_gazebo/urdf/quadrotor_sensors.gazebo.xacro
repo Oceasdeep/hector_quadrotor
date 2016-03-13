@@ -14,16 +14,17 @@
             <rpyOffsets>0 0 0</rpyOffsets> <!-- deprecated -->
             <gaussianNoise>0</gaussianNoise>  <!-- deprecated -->
 
-            <accelDrift>0.5 0.5 0.5</accelDrift>
+<!--             <accelDrift>0.5 0.5 0.5</accelDrift>
             <accelGaussianNoise>0.35 0.35 0.3</accelGaussianNoise>
             <rateDrift>0.1 0.1 0.1</rateDrift>
-            <rateGaussianNoise>0.05 0.05 0.015</rateGaussianNoise>
+            <rateGaussianNoise>0.05 0.05 0.015</rateGaussianNoise> -->
             
-            <!-- without noise version -->
- <!--            <accelDrift>0 0 0</accelDrift>
+            <!-- lower noise version -->
+            <accelDrift>0 0 0</accelDrift>
             <accelGaussianNoise>0.01 0.01 0.01</accelGaussianNoise>
             <rateDrift>0 0 0</rateDrift>
-            <rateGaussianNoise>0.01 0.01 0.01</rateGaussianNoise> -->
+            <rateGaussianNoise>0.01 0.01 0.01</rateGaussianNoise>
+
           </plugin>
 
           <plugin name="quadrotor_baro_sim" filename="libhector_gazebo_ros_baro.so">

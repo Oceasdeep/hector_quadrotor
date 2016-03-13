@@ -133,7 +133,7 @@ void timerCallback(const ros::TimerEvent&, ros::Publisher twist_pub)
     
   }
   count++;
-  if(count % 1000 == 0)
+  if(count % 300 == 0)
   {
     if(rand() % 2 == 0)
     {
