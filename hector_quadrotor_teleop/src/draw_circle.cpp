@@ -14,9 +14,9 @@ ros::Time star;
 
 void generate_path(double t, Vector3d& p, Vector3d& v)
 {
-  const double target_height = 2.0;
+  const double target_height = 3.0;
   const double velocity = 2.0;
-  const double radius = 4.0;
+  const double radius = 6.0;
   double theta = velocity*t/radius;
   p(0) = radius*cos(theta);
   p(1) = radius*sin(theta);
