@@ -12,7 +12,7 @@
     
     <!-- Downward facing camera -->
     <xacro:include filename="$(find hector_sensors_description)/urdf/generic_stereo_camera.urdf.xacro" />
-    <xacro:generic_stereo_camera name="stereo_cam" parent="base_link" ros_topic="stereo_cam/image" cam_info_topic="stereo_cam/camera_info" update_rate="20" res_x="640" res_y="480" image_format="L8" hfov="100" baseline="0.2">
+    <xacro:generic_stereo_camera name="stereo_cam" parent="base_link" ros_topic="stereo_cam/image" cam_info_topic="stereo_cam/camera_info" update_rate="20" res_x="640" res_y="480" image_format="L8" hfov="1.39" baseline="0.2">
       <origin xyz="0.4 0.0 -0.0" rpy="0 ${M_PI/2} 0"/>
     </xacro:generic_stereo_camera>
     
