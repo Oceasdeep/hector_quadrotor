@@ -5,7 +5,9 @@
   <!-- Start Gazebo with wg world running in (max) realtime -->
   <!-- <include file="$(find hector_gazebo_worlds)/launch/rolling_landscape_120m.launch"/> -->
   <!-- <include file="$(find hector_gazebo_worlds)/launch/plane.launch"/> -->
-  <include file="$(find hector_gazebo_worlds)/launch/grass.launch"/>
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/grass.launch"/> -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/football_field.launch"/> -->
+  <include file="$(find hector_gazebo_worlds)/launch/plane_with_white_line2.launch"/>
 
   <!-- <include file="$(find hector_gazebo_worlds)/launch/willow_garage.launch"/> -->
   <!-- Spawn simulated quadrotor uav -->
@@ -22,9 +24,5 @@
   <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor_with_downward_stereo_cam.launch" >  
   </include>
 
-  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/outdoor_flight_stereo_cam.rviz"/>
-
-  
-
-   
+  <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/outdoor_flight_stereo_cam.rviz"/> -->
 </launch>
