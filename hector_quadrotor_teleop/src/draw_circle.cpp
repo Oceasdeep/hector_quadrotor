@@ -12,11 +12,12 @@ Vector3d tnb;
 
 ros::Time star;
 
+int target_height;
+int velocity;
+int radius;
+
 void generate_path(double t, Vector3d& p, Vector3d& v)
 {
-  const double target_height = 3.0;
-  const double velocity = 2.0;
-  const double radius = 6.0;
   double theta = velocity*t/radius;
   p(0) = radius*cos(theta);
   p(1) = radius*sin(theta);
@@ -37,6 +38,12 @@ int main(int argc, char** argv)
   
   ros::init(argc, argv, "quadrotor_draw_circle");
   ros::NodeHandle nh;
+  nh.param("height", target_height, 3);
+  nh.param("radius", radius, 4);
+  nh.param("velocity", velocity, 4);
+  cout << "radius: " << radius << "\n" 
+       << "height: " << target_height << "\n" 
+       << "velocity: " << velocity << endl;
 
   //cmd_vel_mux/input/teleop
   ros::Publisher twist_pub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);

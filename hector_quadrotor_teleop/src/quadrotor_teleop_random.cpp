@@ -74,7 +74,7 @@ void timerCallback(const ros::TimerEvent&, ros::Publisher twist_pub)
     twist.linear.z = linear_z;
     twist_pub.publish(twist);
 
-    if(count % 500 == 0)
+    if(count % 200 == 0)
     {
       toogleState();
       return;
@@ -85,7 +85,7 @@ void timerCallback(const ros::TimerEvent&, ros::Publisher twist_pub)
     twist.angular.z  = angular_z;
 
     twist_pub.publish(twist);
-    if(count % 200 == 0)
+    if(count % 100 == 0)
     {
       toogleState();
       return;
