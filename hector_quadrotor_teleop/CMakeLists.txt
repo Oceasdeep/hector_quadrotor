@@ -87,6 +87,13 @@ target_link_libraries(quadrotor_draw_circle ${catkin_LIBRARIES})
 ## as an example, message headers may need to be generated before nodes
 add_dependencies(quadrotor_draw_circle ${catkin_EXPORTED_TARGETS})
 
+add_executable(quadrotor_draw_rect src/draw_rect.cpp)
+target_link_libraries(quadrotor_draw_rect ${catkin_LIBRARIES})
+
+## Add cmake target dependencies of the executable/library
+## as an example, message headers may need to be generated before nodes
+add_dependencies(quadrotor_draw_rect ${catkin_EXPORTED_TARGETS})
+
 add_executable(spinning_lidar_control src/spinning_lidar_control.cpp)
 target_link_libraries(spinning_lidar_control ${catkin_LIBRARIES})
 
