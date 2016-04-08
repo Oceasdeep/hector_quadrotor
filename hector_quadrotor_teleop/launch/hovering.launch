@@ -1,0 +1,10 @@
+<launch>
+
+  <param name="radius" type="double" value="1.0" />
+  <param name="height" type="double" value="2.0" />
+  <param name="velocity" type="double" value="1.0" />
+  <node pkg="hector_quadrotor_teleop" type="quadrotor_draw_circle" name="quadrotor_draw_circle" output="screen">
+  </node>
+
+</launch>
+
