@@ -7,8 +7,8 @@ Panels:
         - /Global Options1
         - /Status1
         - /Grid1
-        - /PointCloud21
-        - /Axes1
+        - /PointCloud1
+        - /PointCloud1/Status1
       Splitter Ratio: 0.5
     Tree Height: 775
   - Class: rviz/Selection
@@ -29,7 +29,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: PointCloud2
+    SyncSource: PointCloud
 Visualization Manager:
   Class: ""
   Displays:
@@ -59,70 +59,27 @@ Visualization Manager:
         Value: true
       Axis: Z
       Channel Name: intensity
-      Class: rviz/PointCloud2
+      Class: rviz/PointCloud
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 4.56025e-41
+      Max Intensity: 4096
       Min Color: 0; 0; 0
-      Min Intensity: 4.56025e-41
-      Name: PointCloud2
+      Min Intensity: 0
+      Name: PointCloud
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.1
+      Size (m): 0.01
       Style: Flat Squares
       Topic: /velodyne_points
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
-    - Class: rviz/Axes
-      Enabled: true
-      Length: 1
-      Name: Axes
-      Radius: 0.1
-      Reference Frame: base_link
-      Value: true
-    - Alpha: 1
-      Class: rviz/RobotModel
-      Collision Enabled: false
-      Enabled: true
-      Links:
-        All Links Enabled: true
-        Expand Joint Details: false
-        Expand Link Details: false
-        Expand Tree: false
-        Link Tree Style: Links in Alphabetic Order
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sonar_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        velodyne:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        velodyne_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-      Name: RobotModel
-      Robot Description: robot_description
-      TF Prefix: ""
-      Update Interval: 0
-      Value: true
-      Visual Enabled: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -147,22 +104,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 69.1954
+      Distance: 39.938
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.0129339
-        Y: -1.03706
-        Z: 2.98177e-06
+        X: -0.871874
+        Y: -0.208173
+        Z: 0
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.195203
+      Pitch: 0.690203
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz)
-      Yaw: 5.17042
+      Yaw: 6.20222
     Saved: ~
 Window Geometry:
   Displays:

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<launch>
+   
+  <!-- Start Gazebo with wg world running in (max) realtime -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/rolling_landscape_120m.launch"/> -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/plane.launch"/> -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/football_field.launch"/> -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/small_football_field.launch"/> -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/plane2.launch"/> -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/willow_garage.launch"/> -->
+  <!-- <include file="$(find hector_gazebo_worlds)/launch/small_indoor_scenario.launch"/> -->
+  <include file="$(find hector_gazebo_worlds)/launch/gas_station.launch"/>
+
+
+
+
+  <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor_with_velodyne.launch" >  
+      <!-- <arg name="use_ground_truth_for_control" value="false" /> -->
+  </include>
+
+
+  <node pkg="rviz" type="rviz" name="quadrotor_velodyne_rviz" args="-d $(find hector_quadrotor_demo)/rviz_cfg/quadrotor_with_velodyne.rviz"/>
+
+   
+      
+
+
+   
+</launch>
