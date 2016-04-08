@@ -1,0 +1,10 @@
+<launch>
+
+  <param name="length" type="double" value="5" />
+  <param name="height" type="double" value="2" />
+  <param name="velocity" type="double" value="1" />
+  <node pkg="hector_quadrotor_teleop" type="quadrotor_draw_rect" name="quadrotor_draw_rect" output="screen">
+  </node>
+
+</launch>
+
